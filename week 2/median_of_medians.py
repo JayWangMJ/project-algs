@@ -36,7 +36,8 @@ def select(s, rank):
     else:
         return select(A, rank - k)
     
-s = np.random.choice(range(4120), 23)
-rank = 4
-print(sorted(s))
-print('rank', rank, "is:", select(s, rank))
+if __name__ == "__main__":    
+    s = np.random.choice(range(4120), 23)
+    rank = 4
+    print(sorted(s))
+    print('rank', rank, "is:", select(s, rank))

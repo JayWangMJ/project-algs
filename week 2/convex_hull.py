@@ -9,9 +9,6 @@ import numpy as np
 
 NUM_POINTS = 10
 
-# generate random points in 2-D such that all have different x and y coordinates
-points = np.random.choice(range(NUM_POINTS*2), (NUM_POINTS, 2), replace=False)
-
 def convex_hull(points):
     # sort the points by x-coordinate
     points = points[points[:, 0].argsort()]
@@ -84,26 +81,30 @@ def merge(a, b):
 def get_y(L, a, b):
     return (a[1] - b[1]) / (a[0] - b[0]) * (L - a[0]) + a[1]
 
-my_hull = convex_hull(points)
-hull = ConvexHull(points)
+if __name__ == "__main__":
+    # generate random points in 2-D such that all have different x and y coordinates
+    points = np.random.choice(range(NUM_POINTS*2), (NUM_POINTS, 2), replace=False)
 
-fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 3))
+    my_hull = convex_hull(points)
+    hull = ConvexHull(points)
 
-for ax in (ax1, ax2, ax3):
-    ax.plot(points[:, 0], points[:, 1], '.', color='k')
-    if ax == ax1:
-        ax.set_title('Given points')
-    elif ax == ax2:
-        ax.set_title('Convex hull')
-        for simplex in hull.simplices:
-            ax.plot(points[simplex, 0], points[simplex, 1], 'c')
-        ax.plot(points[hull.vertices, 0], points[hull.vertices, 1], 'o', mec='r', color='none', lw=1, markersize=10)
-    else:
-        ax.set_title('My hull')
-        ax.plot(my_hull[:, 0], my_hull[:, 1], 'o', mec='r', color='none', lw=1, markersize=10)
-        for i in range(len(my_hull)):
-            ax.plot([my_hull[i, 0], my_hull[(i+1)%len(my_hull), 0]], [my_hull[i, 1], my_hull[(i+1)%len(my_hull), 1]], 'b')
-    ax.set_xticks(range(NUM_POINTS*2))
-    ax.set_yticks(range(NUM_POINTS*2))
-plt.show()
+    fig, (ax1, ax2, ax3) = plt.subplots(ncols=3, figsize=(10, 3))
+
+    for ax in (ax1, ax2, ax3):
+        ax.plot(points[:, 0], points[:, 1], '.', color='k')
+        if ax == ax1:
+            ax.set_title('Given points')
+        elif ax == ax2:
+            ax.set_title('Convex hull')
+            for simplex in hull.simplices:
+                ax.plot(points[simplex, 0], points[simplex, 1], 'c')
+            ax.plot(points[hull.vertices, 0], points[hull.vertices, 1], 'o', mec='r', color='none', lw=1, markersize=10)
+        else:
+            ax.set_title('My hull')
+            ax.plot(my_hull[:, 0], my_hull[:, 1], 'o', mec='r', color='none', lw=1, markersize=10)
+            for i in range(len(my_hull)):
+                ax.plot([my_hull[i, 0], my_hull[(i+1)%len(my_hull), 0]], [my_hull[i, 1], my_hull[(i+1)%len(my_hull), 1]], 'b')
+        ax.set_xticks(range(NUM_POINTS*2))
+        ax.set_yticks(range(NUM_POINTS*2))
+    plt.show()
 

@@ -23,8 +23,10 @@ class QuickSort():
         # random: pick a random element
         if self.rule == 3:
             return np.random.choice(range(low, high))
-
-    def quick_sort(self):
+    
+    def quick_sort(self, s = None):
+        if s is not None:
+            self.s = s
         self._quick_sort(0, len(self.s))
         return self.s
 
@@ -86,8 +88,7 @@ class QuickSort():
             if s[i] == median:
                 return low + i
     
-
-my_quick_sorter = QuickSort()
-s = np.random.randint(0, 4120, 23)
-my_quick_sorter.set_s(s)
-print(my_quick_sorter.quick_sort())
+if __name__ == "__main__":
+    my_quick_sorter = QuickSort()       
+    s = np.random.randint(0, 4120, 23)
+    print(my_quick_sorter.quick_sort(s))

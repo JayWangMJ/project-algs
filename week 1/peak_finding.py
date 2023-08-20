@@ -134,15 +134,15 @@ def two_dim_peak_finding(a):
                 return two_dim_peak_finding(a[n//2+1:n-1, n//2+1:n-1])
             
 
-
-a = np.random.randint(NUM_MIN, NUM_MAX, N)
-print(a)
-print("1d peak finding:", one_dim_peak_finding(a))
-
-a = np.random.randint(NUM_MIN, NUM_MAX, (N, N))
-print(a)
-print("2d peak finding using 1d:", two_dim_peak_finding_use_one_dim(a))
-print("2d peak finding using recursion:", two_dim_peak_finding(a))
+if __name__ == "__main__":
+    a = np.random.randint(NUM_MIN, NUM_MAX, N)
+    print(a)
+    print("1d peak finding:", one_dim_peak_finding(a))
+    
+    a = np.random.randint(NUM_MIN, NUM_MAX, (N, N))
+    print(a)
+    print("2d peak finding using 1d:", two_dim_peak_finding_use_one_dim(a))
+    print("2d peak finding using recursion:", two_dim_peak_finding(a))
 
 
 """a = np.array([
