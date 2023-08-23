@@ -21,7 +21,7 @@ def ifft(y):
 
 def recursive_fft(a, w_n):
     """
-    CLRS p.910
+    CLRS p.911
     A recursive implementation of FFT over an 1d array, 
     which is the coefficient representation of a polynomial 
     A of degree bound n, where n is a power of 2
