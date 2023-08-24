@@ -12,4 +12,11 @@ For complexity comparison and sorting algorithms, please refer to programming as
 
 
 ## Remained to solve
-* week 4/ runway reservation system
+* week 4/runway reservation system
+* ~~week 5/hash_doubling.py~~
+* ~~week 5/universal_hash_functions.py~~
+* week 5/RSA
+* week 4/red black tree
+* week 4/2-3 tree
+* week 4/b tree
+* week 4/Fibonacci heap
