@@ -20,3 +20,5 @@ For complexity comparison and sorting algorithms, please refer to programming as
 * week 4/2-3 tree
 * week 4/b tree
 * week 4/Fibonacci heap
+* week 7/ucs
+* week 10/euclidian tsp
