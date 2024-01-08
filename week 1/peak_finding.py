@@ -8,6 +8,11 @@ N = 23  # len of the array
 NUM_MIN = 0  # minimum number
 NUM_MAX = 4120  # maximum number
 
+# Lemma: there always exists a peak in any array
+# Proof: think of starting from the first element 
+# and keeping going right if the right is larger
+# this will eventually stop at a peak
+
 # Find any peak of a one dimension array using recursive binary search
 # Consider the mid element:
 #   If it is a peak, done.
