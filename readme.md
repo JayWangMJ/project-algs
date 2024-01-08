@@ -1,8 +1,8 @@
 # CSC4120 Design and Analysis of Algorithms Code Warehouse
 
-CSC4120 Design and Analysis of Algorithms is an undergraduate course by Prof. Costas, who is a presidential chair professor from School of Data Science, the Chinese University of Hong Kong, Shenzhen. The course aims to introduce various aspects of algorithms, including complexity analysis and design approaches.
+CSC4120 Design and Analysis of Algorithms is an undergraduate course by Prof. Costas, who is a presidential chair professor from School of Data Science, the Chinese University of Hong Kong, Shenzhen. The course covers following topics. Basics of algorithm analysis: correctness and time complexity, solving recurrences. Techniques for designing efficient algorithms: divide-and-conquer, dynamic programming. Fundamental search and graph algorithms: binary trees, hashing, graph traversals, shortest paths. Introduction to complexity theory: polynomial-time reductions and NP-completeness.
 
-This warehouse stores Python code for the algorithms introduced in the lectures. 
+This warehouse stores Python codes for the algorithms introduced in the lectures. 
 
 ## Week 1
 Complexity, sorting, peak finding.
