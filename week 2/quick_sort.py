@@ -1,8 +1,17 @@
+# Sorter using quick sort algorithm
+# Provide three pivot choosing rules (QuickSort.rule):
+#   1. pick the first element
+#   2. pick the median (sorted) element
+#   3. pick a random element
+# Call QuickSort.quicksort(s) to sort an array s
+
+
 import numpy as np
+from time import time
 
 class QuickSort():
-    def __init__(self):
-        self.rule = 2
+    def __init__(self, rule=2):
+        self.rule = rule
 
     def set_s(self, s):
         self.s = s
@@ -33,8 +42,11 @@ class QuickSort():
     def _quick_sort(self, low, high):
         if low >= high:
             return
+        # get pivot
         pivot_idx = self.get_pivot(low, high)
+        # partition
         rank = self._partition(low, high, pivot_idx)
+        # divide and conquer
         self._quick_sort(low, rank-1)
         self._quick_sort(rank, high)
 
@@ -50,6 +62,7 @@ class QuickSort():
         return rank
 
     def _find_median(self, low, high):
+        # find median elements among elements self.s[low:high]
         def select(s, rank):
             if len(s) <= 5:
                 s = sorted(s)
@@ -89,6 +102,37 @@ class QuickSort():
                 return low + i
     
 if __name__ == "__main__":
-    my_quick_sorter = QuickSort()       
-    s = np.random.randint(0, 4120, 23)
-    print(my_quick_sorter.quick_sort(s))
+    # compare running time of different pivots
+    my_quick_sorter_first = QuickSort(1)   
+    my_quick_sorter_median = QuickSort(2)
+    my_quick_sorter_random = QuickSort(3)    
+    times = []
+    s = np.random.randint(0, 4120, 1000)
+
+    # pivot: first element
+    start_time = time()
+    for _ in range(100):
+        my_quick_sorter_first.quick_sort(s)
+    times.append(time()-start_time)
+    print(f"Choosing first element as pivot, time: {times[-1]:.4f}s")
+
+    # pivot: median
+    start_time = time()
+    for _ in range(100):
+        my_quick_sorter_median.quick_sort(s)
+    times.append(time()-start_time)
+    print(f"Choosing median as pivot, time: {times[-1]:.4f}s")
+
+    # pivot: random
+    start_time = time()
+    for _ in range(100):
+        my_quick_sorter_random.quick_sort(s)
+    times.append(time()-start_time)
+    print(f"Choosing random element as pivot, time: {times[-1]:.4f}s")
+
+    """
+    One experiment:
+    first: 4.0252s,
+    median: 0.5656s,
+    random: 0.6990s
+    """

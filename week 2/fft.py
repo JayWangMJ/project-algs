@@ -63,6 +63,11 @@ def polynomial_multiply(a, b):
     return c
 
 def convert_str(a):
+    """
+    Input: coefficient representation of polynomial A
+    Output: polynomal A
+    e.g.: a = [1, 2, 3, 4], A = 1+2x+3x^2+4x^3
+    """
     ret = ''
     power = 0
     for coef in a:

@@ -18,9 +18,12 @@ def select(s, rank):
             columns.append(sorted(column))
             column = []
     
+    # get column medians
     medians = [column[2] for column in columns]
+    # find median of column medians
     median = select(medians, int(np.floor((len(medians)+1)/2)))
 
+    # partition
     B = []
     A = []
     for i in s:
@@ -28,6 +31,7 @@ def select(s, rank):
             B.append(i)
         elif i > median:
             A.append(i)
+
     k = len(B) + 1
     if k == rank:
         return median
@@ -38,6 +42,6 @@ def select(s, rank):
     
 if __name__ == "__main__":    
     s = np.random.choice(range(4120), 23)
-    rank = 4
+    rank = 22
     print(sorted(s))
     print('rank', rank, "is:", select(s, rank))

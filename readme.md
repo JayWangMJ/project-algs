@@ -12,6 +12,11 @@ Complexity, sorting, peak finding.
 For complexity comparison and sorting algorithms, please refer to programming assignment 1.
 
 
+## Week 2
+More examples of Divide and Conquer algorithms:
+
+Find convex hull of given points, find rank i element in an array using median of medians, quick sort with different pivot selection rules, check if matrices AB=C, fast Fourier transform. 
+
 
 ## Remained to solve
 * week 4/runway reservation system
