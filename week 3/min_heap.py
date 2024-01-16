@@ -2,7 +2,7 @@ import heapq
 from cmath import inf
 import numpy as np
 
-# We implement a min-heap use 0-based indexing
+# Min-heap implementation with 0-indexing
 
 '''
 # Python built-in heapq functions

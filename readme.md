@@ -18,6 +18,11 @@ More examples of Divide and Conquer algorithms:
 Find convex hull of given points, find rank i element in an array using median of medians, quick sort with different pivot selection rules, check if matrices AB=C, fast Fourier transform. 
 
 
+## Week 3
+Linear time sorting: counting sort, and radix sort; discussion of data structures, motivated by the runway reservation system: min-heap (with heap sort), for other data structures, please see your programming assignment 2.
+
+
+
 ## Remained to solve
 * week 4/runway reservation system
 * ~~week 5/hash_doubling.py~~

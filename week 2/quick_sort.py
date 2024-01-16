@@ -130,6 +130,51 @@ if __name__ == "__main__":
     times.append(time()-start_time)
     print(f"Choosing random element as pivot, time: {times[-1]:.4f}s")
 
+    # np.quicksort
+    s = np.random.randint(0, 41200, 2000)
+    start_time = time()
+    for _ in range(5000):
+        np.sort(s, kind='quicksort')
+    times.append(time()-start_time)
+    print(f"Using numpy quick sort, array size 2000, time: {times[-1]:.4f}s")
+
+    # np.quicksort
+    start_time = time()
+    for _ in range(5000):
+        np.sort(s, kind='mergesort')
+    times.append(time()-start_time)
+    print(f"Using numpy merge sort, array size 2000, time: {times[-1]:.4f}s")
+
+    # np.quicksort
+    s = np.random.randint(0, 41200, 20000)
+    start_time = time()
+    for _ in range(5000):
+        np.sort(s, kind='quicksort')
+    times.append(time()-start_time)
+    print(f"Using numpy quick sort, array size: 20000, time: {times[-1]:.4f}s")
+
+    # np.quicksort
+    start_time = time()
+    for _ in range(5000):
+        np.sort(s, kind='mergesort')
+    times.append(time()-start_time)
+    print(f"Using numpy merge sort, array size: 20000, time: {times[-1]:.4f}s")
+
+    # np.quicksort
+    s = np.random.choice(41200, 20000, replace=False)
+    start_time = time()
+    for _ in range(5000):
+        np.sort(s, kind='quicksort')
+    times.append(time()-start_time)
+    print(f"Using numpy quick sort, array size: 20000, distinct elements, time: {times[-1]:.4f}s")
+
+    # np.quicksort
+    start_time = time()
+    for _ in range(5000):
+        np.sort(s, kind='mergesort')
+    times.append(time()-start_time)
+    print(f"Using numpy merge sort, array size: 20000, distinct elements, time: {times[-1]:.4f}s")
+
     """
     One experiment:
     first: 4.0252s,

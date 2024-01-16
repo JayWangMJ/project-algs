@@ -24,7 +24,7 @@ def radix_sort(a):
     digit = digits - 1
     while digit >= 0:
         for i in range(len(a)):
-            b[a[i, digit]].append(deepcopy(a[i]))
+            b[a[i, digit]].append(deepcopy(a[i])) # a is a pointer to a np array
         idx = 0
         for i in range(radix):
             while b[i]:
